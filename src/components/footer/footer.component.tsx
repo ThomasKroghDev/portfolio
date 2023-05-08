@@ -8,58 +8,46 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <div className={styles.textContent}>
-          <h2>Get early access today</h2>
+          <h2>Connect with me.</h2>
           <p>
-            lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Stay up-to-date with the latest news and announcements by following
+            me on my social media channels. I post regular updates on my
+            products and services, as well as useful tips and resources to help
+            you get the most out of my platform. Join my community today
           </p>
         </div>
         <div className={styles.listContainer}>
-          <h3>features</h3>
+          <h3>Services</h3>
           <ul className={styles.footerList}>
             <li>
-              <a href="#">Link</a>
+              <a href="#">Web Dev</a>
             </li>
             <li>
-              <a href="#">Link</a>
+              <a href="#">Advertising</a>
             </li>
             <li>
-              <a href="#">Link</a>
+              <a href="#">QA Testing</a>
             </li>
           </ul>
         </div>
         <div className={styles.listContainer}>
-          <h3>features</h3>
+          <h3>Blog</h3>
           <ul className={styles.footerList}>
             <li>
-              <a href="#">Link</a>
+              <a href="#">Tips &amp; Tricks</a>
             </li>
             <li>
-              <a href="#">Link</a>
+              <a href="#">Latest Trends</a>
             </li>
             <li>
-              <a href="#">Link</a>
-            </li>
-          </ul>
-        </div>
-        <div className={styles.listContainer}>
-          <h3>features</h3>
-          <ul className={styles.footerList}>
-            <li>
-              <a href="#">Link</a>
-            </li>
-            <li>
-              <a href="#">Link</a>
-            </li>
-            <li>
-              <a href="#">Link</a>
+              <a href="#">Industry News</a>
             </li>
           </ul>
         </div>
       </div>
       <div className={styles.footerCta}>
-        <p>Get Started For Free</p>
-        <Button title="click me seymour" />
+        <p>Join My Newsletter</p>
+        <Button title="Join Now" />
       </div>
       <div className={styles.footerSocials}>
         <ul className={styles.socialsList}>
@@ -86,7 +74,7 @@ function Footer() {
         </ul>
       </div>
       <div className={styles.copy}>
-        <p>© Project. All Rights Reserved</p>
+        <p>© Thomas Krogh. All Rights Reserved</p>
       </div>
     </footer>
   );

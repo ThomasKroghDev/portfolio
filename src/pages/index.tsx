@@ -4,6 +4,7 @@ import TestimonialSwiper from '@/components/testimonialSwiper/testimonialSwiper.
 import Modal from '@/components/modal/modal.component';
 import { useState } from 'react';
 import Drawer from '@/components/drawer/drawer.component';
+import Layout from '@/components/layout/layout.component';
 
 const testimonials = [
   {
@@ -56,13 +57,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <button onClick={handleDrawerOpen}>Open Drawer</button>
-        <Drawer isOpen={isDrawerOpen} onClose={handleDrawerClose}>
-          <h2>Drawer Content</h2>
-          <p>Some content goes here.</p>
-        </Drawer>
-      </main>
+      <Layout>
+        <main className={styles.main}></main>
+      </Layout>
     </>
   );
 }
