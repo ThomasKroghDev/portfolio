@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React from 'react';
-import Button from '../button/button.componet';
 import Image from 'next/image';
 import styles from './hero.module.css';
 
@@ -8,15 +7,21 @@ function Hero() {
   return (
     <div className={styles.heroContainer}>
       <div className={`${styles.leftContent} ${styles.gridItem}`}>
-        <h2 className={styles.header}>title/eye catcher</h2>
+        <h2 className={styles.header}>Thomas Krogh, </h2>
+        <p className={styles.subTitle}>Web Developer</p>
         <p className={styles.tagline}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-          soluta reprehenderit perspiciatis, velit amet necessitatibus laborum
-          nostrum aperiam aliquid eos consectetur illo obcaecati quam explicabo
-          magnam architecto fuga recusandae rem.
+          Hi, I'm Thomas Krogh, and I am the frontend development expert you
+          need to bring your website to life. With years of experience under my
+          belt, I have become proficient in crafting visually stunning websites
+          that function flawlessly.
         </p>
-        <Link className={styles.heroLink} href={'/'}>
-          Click me ←
+        <p className={styles.tagline}>
+          So if you're looking for a frontend developer who can deliver
+          top-notch results, look no further than me. I am ready to collaborate
+          with you and take your website to the next level.
+        </p>
+        <Link className={styles.heroLink} href={'/services'}>
+          Learn More
         </Link>
       </div>
       <div className={`${styles.rightContent} ${styles.gridItem}`}>
@@ -27,8 +32,6 @@ function Hero() {
           alt="worm eye view of palm trees on a clear day"
           fill
         />
-        <Button title="sdfr" />
-        <Button title="learn more" />
       </div>
     </div>
   );

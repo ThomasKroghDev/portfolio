@@ -9,10 +9,10 @@ SwiperCore.use([Navigation, Pagination, Autoplay]);
 type Testimonial = {
   id: number;
   customerImg: string;
-  productName: string;
-  productImg: string;
+  productName?: string;
+  productImg?: string;
   testimonialText: string;
-  linkToProduct: string;
+  linkToProduct?: string;
   customerName: string;
 };
 
@@ -34,7 +34,6 @@ const TestimonialSwiper = ({
         navigation
         pagination={{ clickable: true }}
         loop
-        autoplay={{ delay: 3000 }}
         className={`${styles.swiperContainer} ${styles.mySwiper}`}
       >
         {testimonials.map(
@@ -53,7 +52,7 @@ const TestimonialSwiper = ({
             testimonialText: string;
             productImg?: string;
             productName?: string;
-            linkToProduct: string;
+            linkToProduct?: string;
           }) => (
             <SwiperSlide key={id} className={styles.swiperSlide}>
               <div className={styles.customerImg}>
@@ -63,12 +62,17 @@ const TestimonialSwiper = ({
                 <p>{testimonialText}</p>
                 <div className={styles.name}>- {customerName}</div>
               </div>
-              <div className={styles.productImg}>
-                <a href={linkToProduct}>
-                  <p> See product</p>
-                  <img src={productImg} alt={productName} />
-                </a>
-              </div>
+              {
+                // If there is no product image, don't show the product image
+                productImg && productName && linkToProduct && (
+                  <div className={styles.productImg}>
+                    <a href={linkToProduct}>
+                      <p> See product</p>
+                      <img src={productImg} alt={productName} />
+                    </a>
+                  </div>
+                )
+              }
             </SwiperSlide>
           )
         )}

@@ -3,44 +3,24 @@ import styles from '@/styles/Home.module.css';
 import TestimonialSwiper from '@/components/testimonialSwiper/testimonialSwiper.component';
 import Modal from '@/components/modal/modal.component';
 import { useState } from 'react';
-import Drawer from '@/components/drawer/drawer.component';
 import Layout from '@/components/layout/layout.component';
+import Hero from '@/components/hero/hero.component';
 
 const testimonials = [
   {
     id: 1,
-    customerImg: 'https://source.unsplash.com/100x100/?portrait',
-    productName: 'Product A',
-    productImg: 'https://source.unsplash.com/300x200/?product',
+    customerImg:
+      'https://media.licdn.com/dms/image/C5603AQEvmOCsCW-gSg/profile-displayphoto-shrink_800_800/0/1658973866644?e=1689206400&v=beta&t=50UaDaCNyioxjpbTD2ATo0P7rJ5d0dsoUBOeEdomLuU',
+
     testimonialText:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis libero nec orci venenatis, sed facilisis turpis suscipit.',
-    linkToProduct: 'https://example.com/product-a',
-    customerName: 'John Doe',
-  },
-  {
-    id: 2,
-    customerImg: 'https://source.unsplash.com/100x100/?person',
-    productName: 'Product B',
-    productImg: 'https://source.unsplash.com/300x200/?product',
-    testimonialText:
-      'Pellentesque et lacus pretium, maximus lectus vel, dignissim libero. Sed lobortis libero nec orci venenatis, sed facilisis turpis suscipit.',
-    linkToProduct: 'https://example.com/product-b',
-    customerName: 'Jane Smith',
-  },
-  {
-    id: 3,
-    customerImg: 'https://source.unsplash.com/100x100/?people',
-    productName: 'Product C',
-    productImg: 'https://source.unsplash.com/300x200/?product',
-    testimonialText:
-      'Fusce laoreet, ante eu sollicitudin facilisis, nisi augue interdum eros, non blandit orci sapien id mi. Sed lobortis libero nec orci venenatis, sed facilisis turpis suscipit.',
-    linkToProduct: 'https://example.com/product-c',
-    customerName: 'Bob Johnson',
+      'Thomas Krogh has been a fantastic pupil for studying web development. He has shown tremendous fortitude when it comes to facing challenges and has a great attitude towards learning. He is a great team player and has a great sense of humor. I would recommend Thomas to any company that is looking for a web developer.',
+    customerName: 'Frankie Krogh',
   },
 ];
 
 export default function Home() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleDrawerOpen = () => {
     setIsDrawerOpen(true);
@@ -49,6 +29,11 @@ export default function Home() {
   const handleDrawerClose = () => {
     setIsDrawerOpen(false);
   };
+
+  const handleModalOpen = () => {
+    setIsModalOpen(true);
+  };
+
   return (
     <>
       <Head>
@@ -57,8 +42,23 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Modal
+        title="Notice"
+        text="Our website uses cookies to improve your browsing experience and to personalize content and ads. By continuing to browse the site, you agree to our use of cookies. To learn more about our cookie policy and to manage your cookie preferences, please review our Privacy Policy."
+        buttonText="Got it"
+        onClose={() => {
+          localStorage.setItem('cookiesAccepted', 'true');
+        }}
+        setIsOpen={setIsModalOpen}
+        isOpen={isModalOpen}
+      />
+
       <Layout>
-        <main className={styles.main}></main>
+        <div className={styles.main}>
+          <Hero />
+          <TestimonialSwiper testimonials={testimonials} />
+        </div>
       </Layout>
     </>
   );
