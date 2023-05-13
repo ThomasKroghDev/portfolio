@@ -35,13 +35,17 @@
 .input {
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid orange;
+  border: 1px solid rgb(55, 55, 55);
   resize: none;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
   margin-bottom: 2px;
+}
+.input:-webkit-autofill {
+  background-color: #fff; /* override default yellow background */
+  color: #272947; /* set text color */
 }
 .validationWarning {
   font-size: 12px;

@@ -2,6 +2,11 @@ import React from 'react';
 import Button from '../button/button.componet';
 import { useForm } from '@/common/hooks/useForm';
 import styles from './contactForm.module.css';
+
+type FormErrors = {
+  [key: string]: string;
+};
+
 const initialState = {
   FirstName: '',
   LastName: '',
@@ -9,19 +14,13 @@ const initialState = {
   comment: '',
 };
 
-const validations = [
-  (values: {
-    FirstName: string;
-    LastName: string;
-    Email: string;
-    comment: string;
-  }) => {
-    const errors: {
-      FirstName?: string;
-      LastName?: string;
-      Email?: string;
-      comment?: string;
-    } = {};
+type ValidationFunction = (
+  values: Record<string, unknown>
+) => Record<string, string> | void;
+
+const validations: ValidationFunction[] = [
+  (values) => {
+    const errors: FormErrors = {};
 
     if (!values.FirstName) {
       errors.FirstName = 'First name is required';
@@ -33,7 +32,10 @@ const validations = [
 
     if (!values.Email) {
       errors.Email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(values.Email)) {
+    } else if (
+      typeof values.Email !== 'string' ||
+      !/\S+@\S+\.\S+/.test(values.Email)
+    ) {
       errors.Email = 'Invalid email address';
     }
 
@@ -45,8 +47,29 @@ const validations = [
   },
 ];
 
-const onSubmit = async () => {
-  console.log('Submitted');
+const onSubmit = async (
+  event: React.FormEvent<HTMLFormElement>,
+  values: any
+) => {
+  event.preventDefault();
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    });
+
+    if (response.ok) {
+      console.log('Email sent');
+    } else {
+      console.error('Something went wrong');
+    }
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 export default function ContactForm() {
@@ -65,7 +88,7 @@ export default function ContactForm() {
             type="text"
             name="FirstName"
             id="FirstName"
-            placeholder="John"
+            placeholder="First Name"
             aria-placeholder="first name"
           />
           {touched.FirstName && errors.FirstName && (
@@ -82,6 +105,7 @@ export default function ContactForm() {
             type="text"
             name="LastName"
             id="LastName"
+            placeholder="Last Name"
           />
           {touched.LastName && errors.LastName && (
             <p className={styles.validationWarning}>{errors.LastName}</p>
@@ -97,6 +121,7 @@ export default function ContactForm() {
             type="email"
             name="Email"
             id="Email"
+            placeholder="Email@mail.com"
           />
           {touched.Email && errors.Email && (
             <p className={styles.validationWarning}>{errors.Email}</p>
@@ -111,6 +136,7 @@ export default function ContactForm() {
             className={styles.input}
             name="comment"
             id="comment"
+            placeholder="Comment"
           ></textarea>
           {touched.comment && errors.comment && (
             <p className={styles.validationWarning}>{errors.comment}</p>

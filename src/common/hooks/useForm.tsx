@@ -4,12 +4,30 @@ interface ValidationErrors<T> {
   [key: string]: T;
 }
 
+interface FormValues {
+  [key: string]: string;
+}
+
+interface Touched {
+  [key: string]: boolean;
+}
+
+type ValidationFunction = (
+  values: Record<string, unknown>
+) => void | ValidationErrors<string>;
+
 export function useForm(
-  initialState = {},
-  validations = [] as any[],
-  onSubmit: () => Promise<void>
+  initialState: FormValues = {},
+  validations: ValidationFunction[] = [],
+  onSubmit: (
+    event: React.FormEvent<HTMLFormElement>,
+    values: Record<string, string>
+  ) => Promise<void>
 ) {
-  function validate(validations: any[], values: Record<string, unknown>) {
+  function validate(
+    validations: ValidationFunction[],
+    values: Record<string, unknown>
+  ) {
     const errors: ValidationErrors<string> = {};
 
     validations.forEach((validation) => {
@@ -33,22 +51,30 @@ export function useForm(
   const [errors, setErrors] = useState(initialErrors);
   const [isValid, setIsValid] = useState(initialIsValid);
   const [touched, setTouched] = useState<{ [x: string]: boolean }>(
-    initialState
+    Object.keys(initialState).reduce((acc, key) => {
+      acc[key] = false;
+      return acc;
+    }, {} as Touched)
   );
+
   const changeHandler = (event: { target: { name: any; value: any } }) => {
     const { name, value } = event.target;
     const newValues = { ...values, [name]: value };
     const newlyTouched = { ...touched, [name]: true };
     const { isValid, errors } = validate(validations, newValues);
-    setIsValid(isValid); // set the isValid state based on the latest validation results
+    setIsValid(isValid);
     setValues(newValues);
     setErrors(errors);
     setTouched(newlyTouched);
   };
 
-  const submitHandler = (event: { preventDefault: () => void }) => {
+  const submitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    void onSubmit();
+    if (!isValid) {
+      return;
+    }
+    await onSubmit(event, values);
   };
+
   return { values, changeHandler, isValid, errors, touched, submitHandler };
 }
