@@ -6,6 +6,10 @@ import { useState } from 'react';
 import Layout from '@/components/layout/layout.component';
 import Hero from '@/components/hero/hero.component';
 import ContactForm from '@/components/contactForm/contactForm.componet';
+import NewsTicker from '@/components/newsTicker/newsTicker.component';
+
+// NewsTicker data
+import { data as TickerData } from '@/utils/tickerData/tickerData';
 
 const testimonials = [
   {
@@ -57,6 +61,7 @@ export default function Home() {
 
       <Layout>
         <div className={styles.main}>
+          <NewsTicker {...TickerData} />
           <Hero />
           <TestimonialSwiper testimonials={testimonials} />
           <ContactForm />

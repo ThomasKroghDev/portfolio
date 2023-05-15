@@ -7,7 +7,7 @@ interface IMessage {
 }
 
 interface INewsTickerProps {
-  messages?: IMessage[];
+  messages: IMessage[];
 }
 
 const NewsTicker: React.FC<INewsTickerProps> = ({ messages }) => {

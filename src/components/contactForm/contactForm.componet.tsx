@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '../button/button.componet';
 import { FormValues, useForm } from '@/common/hooks/useForm';
 import styles from './contactForm.module.css';
+import SnackbarContext from '../context/snackbar/SnackbarContext';
 
 type FormErrors = {
   [key: string]: string;
@@ -47,32 +48,35 @@ const validations: ValidationFunction[] = [
   },
 ];
 
-const onSubmit = async (
-  event: React.FormEvent<HTMLFormElement>,
-  values: FormValues,
-  resetForm: () => void // Added resetForm function
-) => {
-  event.preventDefault();
-
-  try {
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(values),
-    });
-
-    if (response.ok) {
-      // Reset the form values to empty strings
-      resetForm();
-    }
-  } catch (error) {
-    console.error(error);
-  }
-};
-
 export default function ContactForm() {
+  const { openSnackbar } = React.useContext(SnackbarContext);
+
+  const onSubmit = async (
+    event: React.FormEvent<HTMLFormElement>,
+    values: FormValues,
+    resetForm: () => void // Added resetForm function
+  ) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (response.ok) {
+        // Reset the form values to empty strings
+        resetForm();
+        openSnackbar('Message sent successfully', 'success');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const {
     values,
     isValid,
@@ -82,6 +86,7 @@ export default function ContactForm() {
     submitHandler,
     resetForm,
   } = useForm(initialState, validations, onSubmit);
+
   return (
     <div
       style={{
