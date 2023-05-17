@@ -1,0 +1,45 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+}
+.mainContainer h1 {
+  font-size: 40px;
+  color: rgb(66, 66, 66);
+  margin: 0;
+  text-align: center;
+}
+.subHeading {
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+.subContainer {
+  padding: 10px 0;
+}
+.subContainer p {
+  font-size: 18px;
+  color: rgb(66, 66, 66);
+  line-height: 1.5;
+  margin: 15px 0;
+  text-align: justify;
+}
+.subContainer a {
+  color: rgb(100, 100, 100);
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 5px;
+}
+.subContainer a:hover {
+  color: rgb(0, 0, 0);
+}
+.imageContainer {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+}
+.image {
+  object-fit: cover;
+}
