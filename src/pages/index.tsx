@@ -5,7 +5,7 @@ import Modal from '@/components/modal/modal.component';
 import { useState } from 'react';
 import Layout from '@/components/layout/layout.component';
 import Hero from '@/components/hero/hero.component';
-import ContactForm from '@/components/contactForm/contactForm.componet';
+import ContactForm from '@/components/contactForm/contactForm.component';
 import NewsTicker from '@/components/newsTicker/newsTicker.component';
 
 // NewsTicker data
