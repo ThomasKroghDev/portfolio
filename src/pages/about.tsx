@@ -10,17 +10,20 @@ const About = () => {
         <h1>About</h1>
         <section className={styles.subContainer}>
           <h2 className={styles.subHeading}>Who am I?</h2>
-          <p>
-            I'm am a frontend web developer focused on web page design and
-            accessibility. I specialize in React and Next.js and css libraries.
-            I mainly intend to work with small to medium sized companies.
+          <p className={styles.paragraph}>
+            Welcome! I'm a passionate frontend web developer with a focus on web
+            page design and accessibility. With expertise in React, Next.js, and
+            CSS libraries, I specialize in crafting engaging and user-friendly
+            experiences. My goal is to collaborate with small to medium-sized
+            companies, delivering exceptional results tailored to their unique
+            needs.
           </p>
           <div className={styles.imageContainer}>
             <Image
               src={
                 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1120&q=80'
               }
-              alt="gray and black laptop computer on surface"
+              alt="Gray and black laptop computer on a surface"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className={styles.image}
@@ -30,17 +33,20 @@ const About = () => {
         <section className={styles.subContainer}>
           <h2 className={styles.subHeading}>What do I do?</h2>
           <p>
-            I build websites and web applications. I also do some graphic
-            design. Keen focus on accessibility and user experience. Advertising
-            and marketing with a focus on SEO and SEM. content creation and
-            content management.
+            I specialize in building captivating websites and web applications,
+            while ensuring accessibility and optimal user experience.
+            Additionally, I offer graphic design services to complement your
+            brand identity. With a keen focus on advertising and marketing,
+            including SEO and SEM, I can help you establish a strong online
+            presence. Let's work together to create and manage engaging content
+            that resonates with your audience.
           </p>
           <div className={styles.imageContainer}>
             <Image
               src={
                 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
               }
-              alt="close up of a black circuit board"
+              alt="Close-up of a black circuit board"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className={styles.image}
@@ -48,20 +54,22 @@ const About = () => {
           </div>
         </section>
         <section className={styles.subContainer}>
-          <h2 className={styles.subHeading}>when did i start</h2>
+          <h2 className={styles.subHeading}>When did I start?</h2>
           <p>
-            I started in the year 2021 at the height of the covid-19 pandemic. I
-            entered a Google Ads course and found that I really enjoyed the web
-            development aspect of the course. I then decided to pursue a career
-            in web development. I was mentored under a professional web
-            developer and have been working on my own projects ever since.
+            My journey into web development began in 2021 during the height of
+            the COVID-19 pandemic. Initially, I enrolled in a Google Ads course
+            and discovered my passion for web development. Eager to pursue this
+            new path, I sought guidance from a seasoned web developer who
+            mentored me. Since then, I've been working on numerous projects
+            independently, continuously honing my skills and staying up-to-date
+            with the latest industry practices.
           </p>
           <div className={styles.imageContainer}>
             <Image
               src={
                 'https://images.unsplash.com/photo-1485988412941-77a35537dae4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=896&q=80'
               }
-              alt="silver macbook pro on brown wooden table"
+              alt="Silver MacBook Pro on a brown wooden table"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className={styles.image}
@@ -69,35 +77,30 @@ const About = () => {
           </div>
         </section>
         <section className={styles.subContainer}>
-          <h2 className={styles.subHeading}>where you can contact me</h2>
+          <h2 className={styles.subHeading}>Where can you contact me?</h2>
           <p>
-            You can contact me via email:
+            I'd love to connect with you! Feel free to reach out to me via email
+            at{' '}
             <a href="mailto:thomas.krogh.dev@gmai.com">
-              <span>My Email Address</span>
-            </a>
-          </p>
-          <p>
-            You can also contact me via phone:
-            <a href="tel:1-801-347-9876">
-              <span>My Phone Number</span>
-            </a>
+              thomas.krogh.dev@gmail.com
+            </a>{' '}
+            or by phone at <a href="tel:1-801-347-9876">1-801-347-9876</a>. You
+            can also find me on various social media platforms:
           </p>
           <div>
-            <p> You can also contact me via social media:</p>
+            <p>Let's connect on:</p>
             <ul>
               <li>
                 <a href="https://www.linkedin.com/in/thomas-krogh-0b1b3b1b9/">
-                  <span>My LinkedIn</span>
+                  LinkedIn
                 </a>
               </li>
               <li>
-                <a href="https://www.facebook.com/thomas.krogh.7">
-                  <span>My Facebook</span>
-                </a>
+                <a href="https://www.facebook.com/thomas.krogh.7">Facebook</a>
               </li>
               <li>
                 <a href="https://www.instagram.com/thomas_krogh_dev/">
-                  <span>My Instagram</span>
+                  Instagram
                 </a>
               </li>
             </ul>
@@ -107,7 +110,7 @@ const About = () => {
               src={
                 'https://images.unsplash.com/photo-1489389944381-3471b5b30f04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
               }
-              alt="tilt shift javascript code on computer screen"
+              alt="Tilt-shift JavaScript code on a computer screen"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className={styles.image}
@@ -115,19 +118,22 @@ const About = () => {
           </div>
         </section>
         <section className={styles.subContainer}>
-          <h2 className={styles.subHeading}>why should you contact me</h2>
+          <h2 className={styles.subHeading}>Why should you contact me?</h2>
           <p>
-            I am a hard worker and I am very passionate about what I do. I am
-            also very easy to work with and I am very flexible. I am also very
-            affordable and I am willing to work with you to find a price that
-            works for both of us.
+            When you choose to work with me, you'll benefit from my strong work
+            ethic, unwavering dedication, and genuine passion for web
+            development. I prioritize collaboration and flexibility, ensuring
+            that your project's unique requirements are met. Moreover, my
+            services are affordably priced, and I'm open to finding a mutually
+            beneficial arrangement. Let's embark on a journey together and bring
+            your ideas to life!
           </p>
           <div className={styles.imageContainer}>
             <Image
               src={
                 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80'
               }
-              alt="laptop computer on brown marble table"
+              alt="Laptop computer on a brown marble table"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className={styles.image}
@@ -136,14 +142,15 @@ const About = () => {
         </section>
 
         <section className={styles.subContainer}>
-          <h2 className={styles.subHeading}>how can i help you</h2>
+          <h2 className={styles.subHeading}>How can I help you?</h2>
 
           <p>
-            I can help you with your web development needs. I can help you with
-            your web design needs. I can help you with your graphic design
-            needs. I can help you with your advertising and marketing needs. I
-            can help you with your content creation and content management
-            needs.
+            I am here to assist you with your web development, web design, and
+            graphic design needs. Whether you require a visually stunning
+            website, a seamless web application, or compelling graphic designs,
+            I've got you covered. Additionally, I specialize in advertising and
+            marketing strategies, including content creation and management.
+            Let's collaborate to achieve your digital goals.
           </p>
         </section>
       </div>

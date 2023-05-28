@@ -1,21 +1,26 @@
+/* mainContainer.module.css */
 .mainContainer {
   display: flex;
   flex-direction: column;
   margin: 40px;
 }
+
 .mainContainer h1 {
   font-size: 40px;
   color: rgb(66, 66, 66);
   margin: 0;
   text-align: center;
 }
+
 .subHeading {
   text-decoration: underline;
   text-transform: capitalize;
 }
+
 .subContainer {
   padding: 10px 0;
 }
+
 .subContainer p {
   font-size: 18px;
   color: rgb(66, 66, 66);
@@ -23,15 +28,18 @@
   margin: 15px 0;
   text-align: justify;
 }
+
 .subContainer a {
   color: rgb(100, 100, 100);
   text-decoration: none;
   font-weight: 600;
   margin: 0 5px;
 }
+
 .subContainer a:hover {
   color: rgb(0, 0, 0);
 }
+
 .imageContainer {
   position: relative;
   height: 120px;
@@ -40,6 +48,86 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   margin: 10px 0;
 }
+
 .image {
   object-fit: cover;
+}
+
+/* mainContainer.module.css Media Queries */
+@media screen and (max-width: 480px) {
+  .mainContainer {
+    margin: 10px;
+  }
+  .mainContainer h1 {
+    font-size: 25px;
+  }
+  .subContainer p {
+    font-size: 14px;
+  }
+  .imageContainer {
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .mainContainer {
+    margin: 20px;
+  }
+  .mainContainer h1 {
+    font-size: 30px;
+  }
+  .subContainer p {
+    font-size: 16px;
+  }
+  .imageContainer {
+    height: 100px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .mainContainer {
+    margin: 30px;
+  }
+  .mainContainer h1 {
+    font-size: 35px;
+  }
+  .subContainer p {
+    font-size: 17px;
+  }
+  .imageContainer {
+    height: 120px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .mainContainer {
+    margin: 40px;
+  }
+  .mainContainer h1 {
+    font-size: 40px;
+  }
+  .subContainer p {
+    font-size: 18px;
+  }
+  .imageContainer {
+    height: 120px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .mainContainer {
+    margin: 50px;
+  }
+  .mainContainer h1 {
+    font-size: 55px;
+  }
+  .subHeading {
+    font-size: 3rem;
+  }
+  .subContainer p {
+    font-size: 33px;
+  }
+  .imageContainer {
+    height: 600px;
+  }
 }
