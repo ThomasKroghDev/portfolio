@@ -18,7 +18,7 @@ const testimonials = [
       'https://media.licdn.com/dms/image/C5603AQEvmOCsCW-gSg/profile-displayphoto-shrink_800_800/0/1658973866644?e=1689206400&v=beta&t=50UaDaCNyioxjpbTD2ATo0P7rJ5d0dsoUBOeEdomLuU',
 
     testimonialText:
-      'Thomas Krogh has been a fantastic pupil for studying web development. He has shown tremendous fortitude when it comes to facing challenges and has a great attitude towards learning. He is a great team player and has a great sense of humor. I would recommend Thomas to any company that is looking for a web developer.',
+      'Thomas has been a fantastic pupil for studying web development. He has shown tremendous fortitude when it comes to facing challenges and has a great attitude towards learning. He is a great team player and has a great sense of humor. I would recommend Thomas to any company that is looking for a web developer.',
     customerName: 'Frankie Krogh',
   },
 ];

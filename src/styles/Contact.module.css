@@ -24,11 +24,12 @@
   padding: 10px 15px 40px 15px;
 }
 .faqContainer {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 10px 20px 10px 20px;
+  margin: 10px 20px 30px 20px;
 }
 
 .subHeading {
@@ -37,6 +38,10 @@
   margin-bottom: 20px;
   border-bottom: 2px solid rgb(66, 66, 66);
   border-radius: 3px;
+}
+.list {
+  width: 100%;
+  padding: 0 40px;
 }
 .listItem {
   font-size: 1.11rem;
@@ -61,14 +66,21 @@
   font-size: 0.7rem;
   padding: 10px 0;
 }
-.question {
-  display: block;
-  font-size: 1.11rem;
-  font-weight: 900;
-  margin: 0 4px;
-}
-.divider {
-  margin: 10px;
-  border-bottom: 2px solid rgb(66, 66, 66);
-  border-radius: 3px;
+
+@media screen and (max-width: 768px) {
+  .contactContainer {
+    margin: 30px 50px 0 50px;
+  }
+  .businessInfoContainer {
+    margin: 10px 50px 10px 50px;
+  }
+  .faqContainer {
+    margin: 10px 50px 30px 50px;
+  }
+  .list {
+    padding: 0;
+  }
+  .infoItem {
+    text-align: left;
+  }
 }
